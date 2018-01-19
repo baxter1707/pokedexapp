@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+  </head>
+  <body>
+    <div class="navbar">
+      <table>
+      <tr class="ul_navbar">
+          <td class="nav_li"><a href="/home/">Home</a></td>
+          <td class="nav_li"><a href="/home/createpokemon">Add Pokemon</a></td>
+          <td class="nav_li"><a href="/home/userlogout">Logout</a></td>
+
+      </tr>
+      </table>
+      <h2 class='trainer_header'> Trainer Page </h2>
+      <table>
+      <tr class="account_links">
+        <td class="username_display">Welcome: <span class="username_span">{{#username}}{{.}}{{/username}}</span></td>
+        <td><a href="/home/{{.}}">Account</a></td>
+        <td><a href="/home/{{#userid}}{{.}}{{/userid}}/showuserpokemon">Trainer Pokemon</a></td>
+      </tr>
+      </table>
+    </div>
+
+    <div class= "trainer_page_body">
+      {{#user}}
+        <tr class="trainer_info">
+          <td> <img class='trainer_image' src='/{{image}}'></td>
+          <td>{{firstname}}</td>
+          <td>{{hometown}}</td>
+          <td>{{bio}}</td>
+          <td>{{age}}</td>
+
+        </tr>
+
+      {{/user}}
+    </div>
+
+  </body>
+</html>

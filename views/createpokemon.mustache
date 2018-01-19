@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+  </head>
+  <body>
+    <div class="navbar">
+      <table>
+      <tr class="ul_navbar">
+        <td class="nav_li"><a href="/home/">Home</a></td>
+        <td class="nav_li"><a href="/home/registeruser">Register</a></td>
+        <td class="nav_li"><a href="/home/userlogin">Login</a></td>
+        <td class="nav_li"><a href="/home/userlogout">Logout</a></td>
+      </tr>
+      </table>
+      <li class="website_title">Pokebase</li>
+      <ul>
+        <li class="username_display"><span class="username_span">{{#username}}{{.}}{{/username}}</span></li>
+        {{#userId}}
+        <li><a href="/home/{{.}}">Account</a></li>
+        {{/userId}}
+      </ul>
+    </div>
+
+
+    <form class="edit_pokemon" action='/home/createpokemon' method="POST" enctype='multipart/form-data'>
+      Edit: {{name}}
+      <input type='file' name='pokemonimg'
+      <label>Pokemon ID:</label>
+      <input type="text" class="edit_input" placeholder="Put name"  name="pokeid">
+      <label>Name:</label>
+      <input type="text" class="edit_input" name='name' >
+      <label>Description:</label>
+      <textarea name='desc'>{{desc}}</textarea>
+      <label>Type:</label>
+      <input type="text" class="edit_input" name='type'>
+      <label>HP:</label>
+      <input type="text" class="edit_input" name = 'hp' >
+      <label>Attack:</label>
+      <input type="text" class="edit_input" name='attack' >
+      <label>Defense:</label>
+      <input type="text" class="edit_input" name='defense'>
+      <label>Speed:</label>
+      <input type="text" class="edit_input"name='speed' >
+      <label>Sp Attack:</label>
+      <input type="text" class="edit_input" name='spattack' >
+      <label>Sp Defense:</label>
+      <input type="text" class="edit_input" name= 'spdefense'>
+      <label>Total:</label>
+      <input type="text" class="edit_input" name='total' >
+      <label>Attack 1:</label>
+      <input type="text" class="edit_input" name='attackone' >
+      <label>Attack 2:</label>
+      <input type="text" class="edit_input" name='attacktwo' >
+      <label>Attack 3:</label>
+      <input type="text" class="edit_input" name="attackthree" >
+      <label>Attack 4:</label>
+      <input type="text" class="edit_input" name='attackfour' >
+      <label>Weakness:</label>
+      <input type="text" class="edit_input" name='weakness' >
+      <button>Create</form>
+    </form>
+
+
+  </body>
+</html>

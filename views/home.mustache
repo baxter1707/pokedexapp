@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+  </head>
+  <body>
+
+    <div class="navbar">
+      <table>
+      <tr class="ul_navbar">
+          <td class="nav_li"><a href="/home/registeruser">Register</a></td>
+          <td class="nav_li"><a href="/home/userlogin">Login</a></td>
+          <td class="nav_li"><a href="/home/userlogout">Logout</a></td>
+      </tr>
+      </table>
+      <li class="website_title">Pokebase</li>
+      <ul class="username_display">
+        <li><span class="username_span">{{#username}}{{.}}{{/username}}</span></li>
+        <li>{{#userId}}<a href="/home/{{.}}">Account</a>{{/userId}}</li>
+      </ul>
+    </div>
+
+    <div class="contain_all">
+      <div class="left_side_bar">
+        Information in here
+      </div>
+
+      <div class="pokemon_div_container">
+
+        {{#pokemon}}
+        <ul class="pokemon_list">
+          <li>
+              <a href="/home/pokemon/{{id}}">{{name}}</a>
+              <input type="hidden" value={{pokeid}}/>
+          </li>
+        </ul>
+        {{/pokemon}}
+      </div>
+
+      <div class="right_side_bar">
+        information in here
+      </div>
+    </div>
+
+  </body>
+</html>

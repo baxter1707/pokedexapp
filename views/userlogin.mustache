@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+  </head>
+  <body>
+
+    <div class="navbar">
+      <table>
+      <tr class="ul_navbar">
+        <td class="nav_li"><a href="/home">Home</a></td>
+        <td class="nav_li"><a href="/home/registeruser">Register</a></td>
+      </tr>
+      </table>
+      <li class="website_title">Pokebase</li>
+      <ul class="username_display">
+        <li><span class="username_span">{{#username}}{{.}}{{/username}}</span></li>
+        <li>{{#userId}}<a href="/home/{{.}}">Account</a>{{/userId}}</li>
+      </ul>
+    </div>
+
+    <form action="/home/userlogin" method="POST">
+      <input type='text' name="username" placeholder="Username">
+      <input type='text' name="password" placeholder="Password">
+      <button>Login</button>
+    </form>
+
+
+
+  </body>
+</html>
