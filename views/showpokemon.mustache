@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+  </head>
+  <body>
+
+    <div class="header">
+      <table class="display_title">
+      <tr>
+          <td class="website_title">Pokebase</td>
+          <td><img class="pokeball_img" src="/public/pokeball.png"></td>
+      </tr>
+      <table class="login_table">
+        <tr>
+          <th colspan="3">
+            <span class="username_span">{{#username}}{{.}}{{/username}}</span>
+            {{#userId}}<a href="/home/{{.}}">Account</a>{{/userId}}
+          </th>
+        </tr>
+
+        <tr>
+          <td class="login_li"><a href="/home/registeruser">Register</a></td>
+          <td class="login_li"><a href="/home/userlogin">Login</a></td>
+          <td class="login_li"><a href="/home/userlogout">Logout</a></td>
+        </tr>
+      </table>
+
+      </table>
+
+    </div>
+
+    <table class="navbar">
+      <tr>
+        <td class="nav_elements"><a href="/home">Home</td>
+      </tr>
+    </table>
+
+
+    {{#pokemon}}
+
+    <div class="div_for_pokedex">
+
+      <div class="pokedex_left">
+        <div class="pokemon_id">{{pokeid}}</div>
+        <div class="display_image">
+          <img class="pokemon_image" src="/{{image}}">
+        </div>
+
+        <table class="catch_table">
+          <tr>
+        <td>
+          <form action="/home/catchpokemon/{{id}}" method="POST">
+            <button class="catch_button">Catch</button>
+          </form>
+        </td>
+        <td><button class="pokemon_button"><a class="pokemon_json" href="/home/pokemon/{{id}}/json">JSON</a></button></td>
+      </tr>
+      </table>
+
+        <div class="pokemon_name">{{name}}</div>
+
+      </div>
+
+      <div class="pokedex_right">
+        <div class="pokemon_description">{{desc}}</div>
+
+      <table class="pokemon_stats">
+        <tr>
+          <td class="pokemon_stat">HP: {{hp}}</td>
+          <td class="pokemon_stat">ATK: {{attack}}</td>
+          <td class="pokemon_stat">DEF: {{defense}}</td>
+        </tr>
+        <tr>
+          <td class="pokemon_stat">SPD: {{speed}}</td>
+          <td class="pokemon_stat">SP ATK: {{spattack}}</td>
+          <td class="pokemon_stat">SP DEF: {{spdefense}}</td>
+        </tr>
+      </table>
+
+    </div>
+
+    {{/pokemon}}
+  </body>
+</html>

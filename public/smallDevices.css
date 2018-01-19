@@ -1,0 +1,29 @@
+.header {
+  align-items: center;
+  display:flex;
+  flex-direction: column;
+}
+
+.login_table {
+  position: inherit;
+}
+
+.contain_all {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.left_side_bar {
+  margin-right: 15px;
+  text-align: center;
+  width: 90%
+}
+
+.pokemon_div_container {
+  width: 90%;
+}
+
+.right_side_bar {
+  width: 90%;
+}

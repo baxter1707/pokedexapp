@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+  </head>
+  <body>
+
+    <div class="header">
+      <table class="display_title">
+      <tr>
+          <td class="website_title">Pokebase</td>
+          <td><img class="pokeball_img" src="/public/pokeball.png"></td>
+      </tr>
+      <table class="login_table">
+        <tr>
+          <th colspan="3">
+            <span class="username_span">{{#username}}{{.}}{{/username}}</span>
+            {{#userId}}<a href="/home/{{.}}">Account</a>{{/userId}}
+          </th>
+        </tr>
+
+        <tr>
+          <td class="login_li"><a href="/home/registeruser">Register</a></td>
+          <td class="login_li"><a href="/home/userlogin">Login</a></td>
+          <td class="login_li"><a href="/home/userlogout">Logout</a></td>
+        </tr>
+      </table>
+
+      </table>
+
+    </div>
+
+    <table class="navbar">
+      <tr>
+        <td class="nav_elements"><a href="/home">Home</td>
+      </tr>
+    </table>
+
+    <div class="contain_all">
+
+      <div class="left_side_bar">
+          <li class="grass_att"><a href="/home/grass">Grass</a></li>
+          <li class="bug_att"><a href="/home/bug">Bug</a></li>
+          <li class="fire_att"><a href="/home/fire">Fire</a></li>
+          <li class="flying_att"><a href="/home/flying">Flying</a></li>
+          <li class="normal_att"><a href="/home/normal">Normal</a></li>
+          <li class="electric_att"><a href="/home/electric">Electric</a></li>
+      </div>
+
+      <div class="pokemon_div_container">
+        <ul class="pokemon_list">
+          <li>To view all pokemon in a JSON format <a href="/jsonpokemon">Click Here</a>!</li>
+          {{#pokemon}}
+          <li class="list_pokemon">
+            <table>
+                <tr>
+                  <td>#0{{pokeid}}</td>
+                  <td><img class="home_pokemon_image" src="/{{image}}"></td>
+                  <td><a href="/home/pokemon/{{id}}">{{name}}</a></td>
+                </tr>
+            </table>
+          </li>
+          {{/pokemon}}
+        </ul>
+      </div>
+
+      <div class="right_side_bar">
+        information in here
+      </div>
+
+    </div>
+
+
+  </body>
+</html>
